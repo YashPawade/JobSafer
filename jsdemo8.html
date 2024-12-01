@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <script>
+        function startTimer() {
+            setInterval(function changeImage() {
+                var images = ["bike.jpg", "car.jpg", "cycle.jpg", "profile.jpg", "amazon.gif"];
+                var index = Math.floor(Math.random() * images.length);
+                document.getElementById("catImage").src = "images/" + images[index];
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <img src="" alt="Random Image" style="width: 250px; height: 250px;" id="catImage">
+    <button onclick="startTimer();">Random Image</button>
+</body>
+</html>

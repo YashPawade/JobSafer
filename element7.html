@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <script>
+       var parentDiv = document.createElement("div");
+
+       
+       var img1 = document.createElement("img");
+       img1.src = "images/bike.jpg"; 
+        
+       img1.style.cursor = "pointer"; 
+
+       
+       var img2 = document.createElement("img");
+       img2.src = "images/cycle.jpg"; 
+        
+       img2.style.cursor = "pointer";
+
+       
+       var img3 = document.createElement("img");
+       img3.src = "images/car.jpg"; 
+        
+       img3.style.cursor = "pointer";
+
+       parentDiv.appendChild(img1);
+       parentDiv.appendChild(img2);
+       parentDiv.appendChild(img3);
+       
+       document.body.appendChild(parentDiv); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .container {
+            width: 250px;
+            border: 1px solid black;
+            text-align: center;
+            border-radius: 15px;
+            margin: 20px;
+            padding: 15px;
+            display: inline-block; 
+        }
+        .btn-custom {
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        var jobListings = [
+            {
+                imgSrc: 'images/genpact.gif',
+                imgAlt: 'Genpact',
+                title: 'Genpact',
+                rating: '⭐3.9 | 27.5k+ Reviews',
+                description: 'Global professional services firm.'
+            },
+            {
+                imgSrc: 'images/jio.gif',
+                imgAlt: 'Jio',
+                title: 'Jio',
+                rating: '⭐4.0 | 20.3k+ Reviews',
+                description: 'True 5G is hereto unlock the limitless era.'
+            },
+            {
+                imgSrc: 'images/Capgemini.gif',
+                imgAlt: 'Capgemini',
+                title: 'Capgemini',
+                rating: '⭐3.8 | 25.3k+ Reviews',
+                description: 'Global leader in technology services.'
+            },
+            {
+                imgSrc: 'images/amazon.gif',
+                imgAlt: 'Amazon',
+                title: 'Amazon',
+                rating: '⭐4. | 21.4k+ Reviews',
+                description: 'World  largest Internet company'
+            }
+        ];
+
+            for (var i = 0; i < jobListings.length; i++) {
+            var container = document.createElement('div');
+            container.className = 'container';
+
+            var img = document.createElement('img');
+            img.src = jobListings[i].imgSrc;
+            img.alt = jobListings[i].imgAlt;
+            container.appendChild(img);
+
+            var h3 = document.createElement('h3');
+            h3.className = 'text-center';
+            h3.textContent = jobListings[i].title;
+            container.appendChild(h3);
+
+            var ratingP = document.createElement('p');
+            ratingP.textContent = jobListings[i].rating;
+            container.appendChild(ratingP);
+
+            var descriptionP = document.createElement('p');
+            descriptionP.textContent = jobListings[i].description;
+            container.appendChild(descriptionP);
+
+            var button = document.createElement('button');
+            button.className = 'px-4 btn btn-primary mt-3 btn-custom';
+            button.textContent = 'View jobs';
+            container.appendChild(button);
+
+            document.body.appendChild(container);
+        }
+    </script>
+</body>
+</html>

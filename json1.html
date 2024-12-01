@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var companyInfo=`{
+ "companies":[
+   {
+  "image":"images/genpact.gif",
+  "name":"Genpact",
+  "rating":3.9,
+  "review":"27.5k+" ,
+  "info":"Global professional services firm.",
+  "id":1
+  },
+  {
+  "image":"images/jio.gif",
+  "name":"Jio",
+  "rating":4.0,
+  "review":"20.3k+" ,
+  "info":"True 5G is hereto unlock the limitless era",
+  "id":2
+  },
+  {
+  "image":"images/Capgemini.gif",
+  "name":"Capgemini",
+  "rating":3.8,
+  "review":"35.3k+" ,
+  "info":"Global leader in technology services.",
+  "id":3
+  },
+  {
+  "image":"images/amazon.gif",
+  "name":"Amazon",
+  "rating":4.1,
+  "review":"21.4k+" ,
+  "info":"World's largest Internet company.",
+  "id":4
+  }
+]
+ }`;
+  
+  
+  var jobj=JSON.parse(companyInfo);
+  for (var i=0;i<jobj.companies.length;i++){
+    console.log(jobj.companies[i].name);
+  }
+  
+
+  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

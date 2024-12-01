@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .job-container {
+            border: 1px solid black;
+            padding: 2%;
+            margin: 30px;
+            border-radius: 15px;
+        }
+
+        .job-header {
+            display: flex;
+        }
+
+        .job-header-left {
+            width: 80%;
+        }
+
+        .job-header-right {
+            width: 20%;
+            text-align: right;
+        }
+
+        .job-header-right img {
+            height: 110px;
+            width: 110px;
+            border-radius: 15px;
+        }
+
+        .job-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-footer p {
+            margin: 0;
+        }
+
+        .job-actions {
+            text-align: right;
+        }
+
+        .job-actions button {
+            border-radius: 25px;
+        }
+
+        .job-actions a {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="companies-tata"></div>
+
+    <script>
+        var info = `{
+        "companies":[
+            {
+                "image":"images/223346.gif",
+                "developer":"Full Stack Engineer",
+                "company":"Tata Consultancy Services (TCS)",
+                "rating":2.9,
+                "review":76531,
+                "experience":"5-10 Years",
+                "money": "1 - 3 lakhs",
+                "location":"Pune, Chennai, Bengaluru",
+                "work":"Roles & Responsibility: Developer,Senior Developer,Technical Lead",
+                "skills":"Java • CSS • Javascript • HTML • SQL • C++ • Communication Skill • Excel",
+                "posted":"12 Days Ago",
+                "openings":1,
+                "applicants":200,
+                "id":1
+            }
+        ]}
+        `;
+
+        var jobj = JSON.parse(info);
+        var tata = document.querySelector('.companies-tata');
+
+        for (var i = 0; i < jobj.companies.length; i++) {
+            var container = document.createElement('div');
+            container.className = 'job-container';
+
+            var header = document.createElement('div');
+            header.className = 'job-header';
+            container.appendChild(header);
+
+            var headerLeft = document.createElement('div');
+            headerLeft.className = 'job-header-left';
+            header.appendChild(headerLeft);
+
+            var h3 = document.createElement('h3');
+            h3.textContent = jobj.companies[i].developer;
+            headerLeft.appendChild(h3);
+
+            var p1 = document.createElement('p');
+            p1.innerHTML = '<span style="font-weight: 400;">' + jobj.companies[i].company + ' ⭐' + jobj.companies[i].rating + '</span>' +
+                           '<span style="font-size: small; margin-left: 2%;">' + jobj.companies[i].review + ' Reviews</span>';
+            headerLeft.appendChild(p1);
+
+            var headerRight = document.createElement('div');
+            headerRight.className = 'job-header-right';
+            header.appendChild(headerRight);
+
+            var img = document.createElement('img');
+            img.src = jobj.companies[i].image;
+            img.alt = jobj.companies[i].company;
+            headerRight.appendChild(img);
+
+            var p2 = document.createElement('p');
+            p2.innerHTML = '<span style="margin-right: 20px;"><i class="fa-solid fa-briefcase"></i> ' + jobj.companies[i].experience + '</span>' +
+                           '<span><i class="fa-solid fa-indian-rupee-sign"></i> ' + jobj.companies[i].money + '</span>';
+            container.appendChild(p2);
+
+            var jobFooter = document.createElement('div');
+            jobFooter.className = 'job-footer';
+            container.appendChild(jobFooter);
+
+            var p3 = document.createElement('p');
+            p3.innerHTML = '<span><i class="fa-solid fa-location-dot"></i> ' + jobj.companies[i].location + '</span>';
+            jobFooter.appendChild(p3);
+
+            var jobActions = document.createElement('div');
+            jobActions.className = 'job-actions';
+            jobActions.innerHTML = '<a href="#">Send me jobs like this</a>';
+            jobFooter.appendChild(jobActions);
+
+            var hr = document.createElement('hr');
+            container.appendChild(hr);
+
+            var p4 = document.createElement('p');
+            p4.innerHTML = '<span>Posted: <b>' + jobj.companies[i].posted + '</b></span>' +
+                           '<span style="margin-left: 10px;">Openings: <b>' + jobj.companies[i].openings + '</b></span>' +
+                           '<span style="margin-left: 10px;">Applicants: <b>' + jobj.companies[i].applicants + '</b></span>' +
+                           '<span style="float: right;"><button class="px-4 btn btn-success">Register</button></span>' +
+                           '<span style="float: right; margin-right: 10px;"><button class="px-4 btn btn-primary">Login</button></span>';
+            container.appendChild(p4);
+
+            tata.appendChild(container);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .container-info {
+            width: 250px;
+            border: 1px solid black;
+            text-align: center;
+            border-radius: 15px;
+            margin: 20px;
+            padding: 15px;
+        }
+        .btn-custom {
+            border-radius: 25px;
+        }
+        .companies-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="companies-wrapper"></div>
+    
+    <script>
+         var companyInfo=`{
+            "companies":[
+                {
+                    "image":"genpact.gif",
+                    "name":"Genpact",
+                    "rating":3.9,
+                    "review":"27.5k+" ,
+                    "info":"Global professional services firm.",
+                    "id":1
+                },
+                {
+                    "image":"jio.gif",
+                    "name":"Jio",
+                    "rating":4.3,
+                    "review":"20.3k+" ,
+                    "info":"True 5G is hereto unlock the limitless era.",
+                    "id":2
+                },
+                {
+                    "image":"Capgemini.gif",
+                    "name":"Capgemini",
+                    "rating":3.8,
+                    "review":"35.3k+" ,
+                    "info":"Global leader in technology services.",
+                    "id":3
+                },
+                {
+                    "image":"amazon.gif",
+                    "name":"Amazon",
+                    "rating":4.1,
+                    "review":"21.4k+" ,
+                    "info":"World's largest Internet company.",
+                    "id":4
+                }
+            ]
+        }`;
+        
+        var jobj = JSON.parse(companyInfo);
+        var wrapper = document.querySelector('.companies-wrapper');
+
+        for (var i = 0; i < jobj.companies.length; i++) {
+            var container = document.createElement('div');
+            container.className = 'container-info';
+
+            var img = document.createElement('img');
+            img.src = "images/" + jobj.companies[i].image;
+            img.alt = jobj.companies[i].name;
+            container.appendChild(img);
+
+            var h3 = document.createElement('h3');
+            h3.className = 'text-center';
+            h3.textContent = jobj.companies[i].name;
+            container.appendChild(h3);
+
+            var ratingP = document.createElement('p');
+            ratingP.textContent = "⭐" + jobj.companies[i].rating + " | " + jobj.companies[i].review + " Reviews";
+            container.appendChild(ratingP);
+
+            var descriptionP = document.createElement('p');
+            descriptionP.textContent = jobj.companies[i].info;
+            container.appendChild(descriptionP);
+
+            var button = document.createElement('button');
+            button.className = 'px-4 btn btn-primary mt-3 btn-custom';
+            button.textContent = 'View jobs';
+            container.appendChild(button);
+
+            wrapper.appendChild(container);
+        }
+    </script>
+</body>
+</html>

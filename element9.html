@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .custom-container {
+            border-radius: 25px;
+            border: 1px solid rgba(5, 5, 5, 0.986);
+            padding: 15px;
+        }
+
+        .custom-btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center">Top industries hiring..</h1>
+
+    <div class="container mt-3 custom-container">
+        <div class="d-flex flex-wrap" id="parentDiv">
+        </div>
+    </div>
+
+    <script>
+        var btns = `{
+      "buttons": [{
+        "category": "Remote",
+        "icon": "fa-home",
+        "id": 1
+      }, {
+        "category": "MNC",
+        "icon": "fa-building",
+        "id": 2
+      }, {
+        "category": "Fortune 500",
+        "icon": "fa-medal",
+        "id": 3
+      }, {
+        "category": "Banking and Finance",
+        "icon": "fa-dollar-sign",
+        "id": 4
+      }, {
+        "category": "Marketing",
+        "icon": "fa-chart-line",
+        "id": 5
+      }, {
+        "category": "Sales",
+        "icon": "fa-bullhorn",
+        "id": 6
+      }, {
+        "category": "Supply Chain Management",
+        "icon": "fa-box",
+        "id": 7
+      },{
+        "category": "Internship",
+        "icon": "fa-building",
+        "id": 8
+      },{
+        "category": "Engineering",
+        "icon": "fa-cogs",
+        "id": 9
+      },{
+        "category": "Startup",
+        "icon": "fa-rocket",
+        "id": 10
+      }]
+    }`;
+
+        var bobj = JSON.parse(btns);
+        var parentDiv = document.getElementById("parentDiv");
+
+        for (var j = 0; j < bobj.buttons.length; j++) {
+            var b1 = document.createElement("button");
+            var tn = document.createTextNode(" " + bobj.buttons[j].category);
+            b1.classList.add("btn", "btn-outline-primary", "custom-btn");
+            var i = document.createElement("i");
+            i.classList.add("fa-solid", bobj.buttons[j].icon);
+            b1.appendChild(i);
+            b1.appendChild(tn);
+            parentDiv.appendChild(b1);
+        }
+    </script>
+</body>
+
+</html>
+<!-- <script>
+        
+        var parentDiv = document.createElement("div");
+        var txtArr = ["Remote", "Fresher", "Sales", "Marketing", "Startup", "MNC"];
+        var iconArr = ["fa-home", "user-graduate", "fa-bullhorn", "fa-chart-line", "fa-rocket", "fa-building"];
+        
+        for (var j = 0; j < txtArr.length; j++) {
+            var b1 = document.createElement("button");
+            var tn = document.createTextNode(txtArr[j]); 
+            b1.classList.add("btn", "btn-outline-primary");
+            
+            var i = document.createElement("i");
+            i.classList.add("fa-solid", iconArr[j]); 
+            b1.appendChild(i);
+            b1.appendChild(tn);
+            
+            parentDiv.appendChild(b1);
+        }
+        
+        document.body.appendChild(parentDiv);
+    </script>-->
+
+    
+    

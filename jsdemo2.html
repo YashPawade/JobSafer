@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function categorySelected(){
+           console.log( selectCategory.value)
+           
+           switch(selectCategory.value) {
+    case "car":
+        catImage.src = "images/car.jpg";
+        break;
+    case "bike":
+        catImage.src = "images/bike.jpg";
+        break;
+    case "cycle":
+        catImage.src = "images/cycle.jpg";
+        break;
+    
+    default:
+        catImage.src = "";
+}
+
+        }
+    </script>
+</head>
+<body>
+    <img src="" alt="" style="width: 250px; height: 250px;" id="catImage">
+    <select id="selectCategory" onchange="categorySelected();">
+        <option value="select category">select category</option>
+        <option value="bike">bike</option>
+        <option value="car">car</option>
+        <option value="cycle">cycle</option>
+    </select>
+</body>
+</html>
+
+
+
+<!--  use in switch place 
+if(selectCategory.value == "car"){
+    catImage.src = "images/car.jpg";
+} else if(selectCategory.value == "bike"){
+    catImage.src = "images/bike.jpg";
+} else if(selectCategory.value == "cycle"){
+    catImage.src = "images/cycle.jpg";
+} else if(selectCategory.value == "select category"){
+    catImage.src = "";
+}
+-->

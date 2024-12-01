@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <script>
+       var parentDiv = document.createElement("div");
+       var b1 = document.createElement("button");
+       b1.innerHTML = "button 1";
+       b1.className = "btn btn-outline-primary ";  
+       var b2 = document.createElement("button");
+       b2.innerHTML = "button 2";
+       b2.className = "btn btn-outline-primary ";  
+       var b3 = document.createElement("button");
+       b3.innerHTML = "button 3";
+       b3.className = "btn btn-outline-primary ";  
+
+       parentDiv.appendChild(b1);
+       parentDiv.appendChild(b2);
+       parentDiv.appendChild(b3);
+       
+       document.body.appendChild(parentDiv); 
+    </script>
+
+    
+   
+</body>
+</html>

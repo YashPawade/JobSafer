@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+   function startTimer(){
+   
+    setInterval(function changeColor(){
+        var r =Math.random()*255;
+    var g =Math.random()*255;
+    var b =Math.random()*255;
+   
+    box.style.backgroundColor="rgb("+r+"," +g+","+ b+")";
+    },100);
+
+    
+}
+
+    </script>
+</head>
+<body>
+    <div style="height: 250px; width: 250px; background-color: black;" id="box"></div>
+    <button  onclick="startTimer();">Generate Random No</button>
+    
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        setInterval(function () {
+          var date = new Date();
+          var tsec = date.getSeconds();
+          var tmin = date.getMinutes();
+          var thr = date.getHours();
+          $("#hr").html(thr);
+          $("#min").html(tmin);
+          $("#sec").html(tsec);
+        }, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <h2 id="clock">
+      <span id="hr"></span> : <span id="min"></span> :
+      <span id="sec"></span>
+    </h2>
+    <h1 id="head1">This Is Heading</h1>
+    <button id="button1">Click Me</button>
+  </body>
+  <script>
+    $("#button1").click(function () {
+      $("#head1").slideToggle();
+    });
+  </script>
+</html>

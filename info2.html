@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .benefit-container {
+            border: 1px solid black;
+            padding: 2%;
+            margin: 2%;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        .benefit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .benefit-header h5 {
+            margin: 0;
+        }
+        .benefit-header a {
+            color: skyblue;
+            text-align: right;
+            text-decoration: none;
+        }
+        .benefit-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .benefit {
+            margin: 10px;
+            text-align: center;
+        }
+        .benefit i {
+            font-size: 50px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="benefit-container">
+        <div class="benefit-header">
+            <h1>Benefits & Perks</h1>
+            <a href="#">View all</a>
+        </div>
+        <p>25192 Users reported these benefits</p>
+        <div class="benefit-list" id="benefit-list"></div>
+    </div>
+
+    <script>
+        var info = `{
+            "companies": [
+                {
+                    "icon": "fa-solid fa-notes-medical",
+                    "name": "Health Insurance",
+                    "id": 1
+                },
+                {
+                    "icon": "fa-solid fa-house-user",
+                    "name": "Work From Home",
+                    "id": 2
+                },
+                {
+                    "icon": "fa-solid fa-utensils",
+                    "name": "Cafeteria",
+                    "id": 3
+                },
+                {
+                    "icon": "fa-solid fa-dumbbell",
+                    "name": "Gym",
+                    "id": 4
+                },
+                {
+                    "icon": "fa-solid fa-chalkboard-teacher",
+                    "name": "Soft Skill Training",
+                    "id": 5
+                },
+                {
+                    "icon": "fa-solid fa-graduation-cap",
+                    "name": "Job Training",
+                    "id": 6
+                }
+            ]
+        }`;
+
+        var data = JSON.parse(info);
+        var benefitList = document.getElementById('benefit-list');
+
+        data.companies.forEach(function(company) {
+            var benefitDiv = document.createElement('div');
+            benefitDiv.className = 'benefit';
+
+            var icon = document.createElement('i');
+            icon.className = company.icon;
+
+            var p = document.createElement('p');
+            p.textContent = company.name;
+
+            benefitDiv.appendChild(icon);
+            benefitDiv.appendChild(p);
+
+            benefitList.appendChild(benefitDiv);
+        });
+    </script>
+</body>
+</html>

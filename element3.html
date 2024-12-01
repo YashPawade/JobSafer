@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="mybody">
+    <h2 id="yash">Hello Yash</h2>
+    <script>
+        var elem = document.createElement("select");
+        var colors = ["Black", "Blue", "Green", "Yellow", "Red"];
+
+        for(var i = 0; i < colors.length; i++) {
+            var option = document.createElement("option");
+            option.innerHTML = colors[i];
+            elem.appendChild(option);
+        }
+
+        elem.addEventListener("change", function() {
+            var selectedColor = elem.value;
+            document.getElementById("yash").style.color = selectedColor;
+        });
+
+        var newElem = document.createElement("h1");
+        newElem.id = "yash";
+        newElem.innerHTML = "Hello Yash";
+
+        var oldElem = document.getElementById("yash");
+        mybody.replaceChild(newElem, oldElem);
+
+        mybody.appendChild(elem);
+        console.log(elem);
+    </script>
+</body>
+</html>

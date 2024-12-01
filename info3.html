@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Description</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            border: 1px solid black;
+            padding: 2%;
+            margin: 30px;
+            border-radius: 15px;
+        }
+        h4 {
+            margin: 0 0 10px 0;
+        }
+        p {
+            margin: 0;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skill {
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .preferred {
+            background-color: #f0f8ff;
+        }
+        .social-links span {
+            margin: 10px;
+            font-size: 30px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Job description</h2>
+        <p id="greeting"></p>
+        <p><b>Position:</b> <span id="position"></span></p>
+        <p><b>Experience:</b> <span id="experience"></span></p>
+        <p><b>Location:</b> <span id="location"></span></p>
+        <p><b>Required Technical Skills:</b> <span id="required-skills"></span></p>
+        <p><b>Desired Competencies (Technical/Behavioral Competency):</b></p>
+        <ul id="desired-competencies"></ul>
+        <p><b>Responsibility of / Expectations from the Role:</b></p>
+        <ul id="responsibilities"></ul>
+        <p><b>Role:</b> <span id="role"></span></p>
+        <p><b>Industry Type:</b> <span id="industry-type"></span></p>
+        <p><b>Department:</b> <span id="department"></span></p>
+        <p><b>Employment Type:</b> <span id="employment-type"></span></p>
+        <p><b>Role Category:</b> <span id="role-category"></span></p>
+        <p><b>Education:</b></p>
+        <p><b>UG:</b> <span id="undergraduate"></span></p>
+        
+        <div>
+            <b>Key Skills</b>
+            <p>Skills highlighted with ⭐ are preferred key skills</p>
+            <div class="skills" id="key-skills"></div>
+        </div>
+        
+        <hr>
+        
+        <div class="social-links">
+            <span id="facebook"></span>
+            <span id="instagram"></span>
+            <span id="twitter"></span>
+        </div>  
+    </div>
+     
+    <script>
+        var info = {
+            "job_description": {
+                "greeting": "Dear Candidates, Greetings from TCS!!!!",
+                "position": "Full Stack Engineer",
+                "experience": "5-10 years",
+                "location": ["Chennai", "Bangalore", "Kochi", "BBSR", "Pune"],
+                "required_technical_skills": ["HTML", "CSS", "JavaScript", "ReactJS", "NodeJS", "SQL", "NoSQL", "AWS", "Azure", "GIT"],
+                "desired_competencies": {
+                    "technical": [
+                        "Hands-on experience in developing Back and Front-End apps.",
+                        "In-depth knowledge of JavaScript, CSS, HTML, JSON and front-end languages.",
+                        "Understanding of Data Stores (SQL/NoSQL, etc), Restful API/GraphQL",
+                        "Expertise in React and Node JS along with related libraries like Redux and saga.",
+                        "Understand business requirements and perform technical application development.",
+                        "Manage code versioning utilizing a tool like GitHub.",
+                        "Experience with user interface design.",               
+                        "Experience in all testing phases of development including Unit & Integration Testing.",
+                        "Experience with web debugging and performance testing software.",
+                        "Experienced full stack engineer who enjoys both leading projects and being an individual contributor / technical expert",
+                        "Able to work in an intense, energetic environment and work with passionate, top-notch people",
+                        "Execute well with a high degree of individual ownership, but are also adept at working as part of a team",
+                        "Comfortable balancing the competing demands of rapid iteration and system reliability, scalability, and performance",
+                        "Love working in a data-driven and customer-first environment",
+                        "Experience with modern databases like Postgres, MySQL, MongoDB etc",
+                        "Experience with cloud services like AWS & Azure"
+                    ],
+                    "behavioral": [
+                        "Very good communication skills",
+                        "Experience developing in an Agile / SCRUM Environment"
+                    ]
+                },  
+                "responsibilities": [
+                    "Work with business partners to understand desired initiatives and implement application capabilities",
+                    "Contribute to the platform, codebase, that supports user experiences",
+                    "Shape and continuously improve software engineering practices",
+                    "Own the craftsmanship, availability, resilience, and scalability of your solutions",
+                    "Bring a passion to stay on top of tech trends, experiment with and learn new technologies, participate in internal & external technology communities, and mentor other members of the engineering community",
+                    "Encourage innovation, implementation of cutting-edge technologies, inclusion, outside-of-the-box thinking, teamwork, self-organization, and diversity"
+                ],
+                "role_details": {   
+                    "role": "Full Stack Developer",
+                    "industry_type": "IT Services & Consulting",
+                    "department": "Engineering - Software & QA",
+                    "employment_type": "Full Time, Permanent",
+                    "role_category": "Software Development"
+                },
+                "education": {
+                    "undergraduate": "Any Graduate"
+                },
+                "key_skills": {
+                    "preferred": ["Fullstack Development", "Frontend Development", "Backend Development", "Node.Js", "React.Js"],
+                    "other": ["Javascript"]
+                },
+                "social_links": {
+                    "facebook": "fa-facebook",
+                    "instagram": "fa-instagram",
+                    "twitter": "fa-twitter"
+                }
+            }
+        };
+
+        document.getElementById('greeting').textContent = info.job_description.greeting;
+        document.getElementById('position').textContent = info.job_description.position;
+        document.getElementById('experience').textContent = info.job_description.experience;
+        document.getElementById('location').textContent = info.job_description.location.join(', ');
+        document.getElementById('required-skills').textContent = info.job_description.required_technical_skills.join(', ');
+   
+        var desiredCompetencies = info.job_description.desired_competencies.technical.concat(info.job_description.desired_competencies.behavioral);
+        var desiredList = document.getElementById('desired-competencies');
+        desiredCompetencies.forEach(function(item) {
+            var li = document.createElement('li');
+            li.textContent = item;
+            desiredList.appendChild(li);
+        });
+
+        var responsibilities = document.getElementById('responsibilities');
+        info.job_description.responsibilities.forEach(function(item) {
+            var li = document.createElement('li');
+            li.textContent = item;
+            responsibilities.appendChild(li);
+        });
+
+        document.getElementById('role').textContent = info.job_description.role_details.role;
+        document.getElementById('industry-type').textContent = info.job_description.role_details.industry_type;
+        document.getElementById('department').textContent = info.job_description.role_details.department;
+        document.getElementById('employment-type').textContent = info.job_description.role_details.employment_type;
+        document.getElementById('role-category').textContent = info.job_description.role_details.role_category;
+        document.getElementById('undergraduate').textContent = info.job_description.education.undergraduate;
+
+        var keySkills = document.getElementById('key-skills');
+        info.job_description.key_skills.preferred.forEach(function(skill) {
+            var div = document.createElement('div');
+            div.className = 'skill preferred';
+            div.innerHTML = '⭐ <span>' + skill + '</span>';
+            keySkills.appendChild(div);
+        });
+        info.job_description.key_skills.other.forEach(function(skill) {
+            var div = document.createElement('div');
+            div.className = 'skill';
+            div.innerHTML = '<span>' + skill + '</span>';
+            keySkills.appendChild(div);
+        });
+
+        var socialLinks = document.querySelector('.social-links');
+        for (var key in info.job_description.social_links) {
+            if (info.job_description.social_links.hasOwnProperty(key)) {
+                var span = document.getElementById(key);
+                span.innerHTML = '<i class="fa-brands ' + info.job_description.social_links[key] + '"></i>';
+            }
+        }
+    </script>
+</body>
+</html>
+                                                                                 

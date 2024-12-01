@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv">
+
+    </div>
+</body>
+<script>
+    var d1=document.createElement("div");
+    
+    var d2=document.createElement("div");
+    
+    var d3=document.createElement("div");
+    d3.innerHTML="This Is Div 3";
+    d2.appendChild(d3);
+    d1.appendChild(d2);
+    mydiv.appendChild(d1);
+</script>
+</html>

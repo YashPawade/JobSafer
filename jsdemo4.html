@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function changeColor(){
+        para.style.color="red";
+        para.style.backgroundColor=selectColor.value;
+        para.style.border="1px solid black";
+        para.style.padding="15px";
+    }
+
+    function changebgColor(){
+        para.style.backgroundColor=selectColor.value;
+       }
+    
+function randomNo(){
+    var rno=Math.random()*100;
+    rno=Math.round(rno);
+
+
+    console.log(rno);
+}       
+    </script>
+</head>
+<body>
+
+    <button onclick="randomNo();">Generate Random No</button>
+    
+    <p id="para" style="color: rgb(255, 255, 255);">This is Paragraph</p>
+    <select name="" id="selectColor" onchange="changebgColor();">
+        <option value="">Select Color</option>
+        <option value="red">red</option>
+        <option value="yellow">yellow</option>
+        <option value="green">green</option>
+    </select>
+    <button onclick="changeColor()">Click Here</button>
+</body>
+</html>
+
+
+
+<!--  use in switch place 
+if(selectCategory.value == "car"){
+    catImage.src = "images/car.jpg";
+} else if(selectCategory.value == "bike"){
+    catImage.src = "images/bike.jpg";
+} else if(selectCategory.value == "cycle"){
+    catImage.src = "images/cycle.jpg";
+} else if(selectCategory.value == "select category"){
+    catImage.src = "";
+}
+    complex  control is hard to 
+-->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body id="mybody">
+
+    <img src="images/bike.jpg" alt="" id="img1" style="width: 150px; height: 150px;">
+    <img src="images/car.jpg" alt="" id="img2" style="width: 150px; height: 150px;">
+    <img src="images/cycle.jpg" alt="" id="img3" style="width: 150px; height: 150px;">  
+
+    <img src="images/amazon.gif" alt="" id="mainimg" style="width: 400px; height: 400px;">
+    
+</body>
+<script>
+    $("#img1").mouseenter(function(){
+       // mainimg.src="images/bike.jpg";
+       $("#mainimg").attr("src","images/bike.jpg");
+    });
+ 
+    $("#img1").mouseleave(function(){
+        mainimg.src="images/amazon.gif";
+    });
+
+    $("#img2").mouseenter(function(){
+        mainimg.src="images/car.jpg";
+    });
+
+    $("#img2").mouseleave(function(){
+        mainimg.src="images/amazon.gif";
+    });
+
+    $("#img3").mouseenter(function(){
+        mainimg.src="images/cycle.jpg"
+    });
+
+    $("#img3").mouseleave(function(){
+        mainimg.src="images/amazon.gif";
+    });
+</script>
+</html>

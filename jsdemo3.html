@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function categorySelected(){
+            var images=["bike.jpg","car.jpg","cycle.jpg"]
+            var index=selectCategory.value;
+            catImage.src = "images/"+images[index];
+
+           
+           
+          
+
+        }
+    </script>
+</head>
+<body>
+    <img src="" alt="" style="width: 250px; height: 250px;" id="catImage">
+    <select id="selectCategory" onchange="categorySelected();">
+        <option value="select category">select category</option>
+        <option value="0">bike</option>
+        <option value="1">car</option>
+        <option value="2">cycle</option>
+    </select>
+</body>
+</html>
+
+
+
+<!--  use in switch place 
+if(selectCategory.value == "car"){
+    catImage.src = "images/car.jpg";
+} else if(selectCategory.value == "bike"){
+    catImage.src = "images/bike.jpg";
+} else if(selectCategory.value == "cycle"){
+    catImage.src = "images/cycle.jpg";
+} else if(selectCategory.value == "select category"){
+    catImage.src = "";
+}
+    complex  control is hard to 
+-->

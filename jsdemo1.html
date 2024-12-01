@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var i=0;
+        
+            
+        function changeImage(){
+             
+        if (i <3 ) {
+            i++ ; 
+            }
+            var images = [ "223346.gif","amazon.gif","Capgemini.gif","fis.gif"] ;
+            console.log ("next"+1);
+            var curImage= images[i];
+            usrImage.src="images/"+ curImage;
+           
+        }
+
+        
+        function changeImage1(){
+            i--;
+            var images = [ "223346.gif","amazon.gif","Capgemini.gif","fis.gif"];
+            console.log ("prev"+1);
+            if (i < 0) {
+                i = 0; 
+            }
+            var curImage= images[i];
+            usrImage.src="images/"+ curImage;
+           
+        }
+    </script>
+</head>
+<body>
+    <img src="images/223346.gif" alt="" id="usrImage" style="width: 150px; height: 150px;">
+    <button onclick="changeImage1();">prev</button>
+    <button onclick="changeImage();">next</button>
+</body>
+</html>
